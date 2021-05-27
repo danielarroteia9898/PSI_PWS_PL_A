@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/PSI_PWS_PL_A" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/PSI_PWS_PL_A/weblogicmvc" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/repositorio/Aeroporto/PSI_PWS_PL_A" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/repositorio/Aeroporto/weblogicmvc" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/weblogicmvc" vcs="Git" />
+  </component>
+</project>
