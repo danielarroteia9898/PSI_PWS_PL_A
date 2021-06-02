@@ -16,11 +16,12 @@ Router::get('/',			'HomeController/index');
 Router::get('home/',		'HomeController/index');
 Router::get('home/index',	'HomeController/index');
 Router::get('home/start',	'HomeController/start');
-
 Router::get('test/index',  'TestController/index');
 
+router::post('user/show','homeController/login');
+router::get('home/login', 'HomeController/login');
 
-
+router::resource('ticket', 'TicketController');
 
 
 

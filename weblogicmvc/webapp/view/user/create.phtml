@@ -1,0 +1,79 @@
+<?php use ArmoredCore\WebObjects\Data;
+use ArmoredCore\WebObjects\ErrMgr;
+use ArmoredCore\WebObjects\Layout;
+use ArmoredCore\WebObjects\URL;
+
+Layout::includeLayout('header') ?>
+<?php
+var_dump('fa');
+$finances = Data::get('finance')?>
+<?php ErrMgr::attach($finances) ?>
+
+
+<!-- container -->
+<div class="container">
+
+    <div class="row">
+
+        <!-- Article main content -->
+        <article class="col-xs-12 maincontent">
+            <header class="page-header">
+                <h1 class="page-title">New Book</h1>
+            </header>
+
+            <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <hr>
+                        <form method="post" action="<?=Url::toRoute('finance/store')?>">
+                            <div class="top-margin">
+                                <label>Name <span class="text-danger">*</span></label>
+                                <input type="text" value="<?=$finances->name?>" name="name" class="form-control" placeholder="Enter name">
+                                <?= ErrMgr::bind('name') ?>
+
+                            </div>
+                            <hr>
+                            <div class="top-margin">
+                                <label>Descricao <span class="text-danger">*</span></label>
+                                <input type="text" value="<?=$finances->descricao?>" name="descricao" class="form-control" placeholder="Enter descricao">
+                                <?= ErrMgr::bind('descricao') ?>
+                            </div>
+                            <hr>
+                            <div class="top-margin">
+                                <label>Data <span class="text-danger">*</span></label>
+                                <input type="datetime-local" value="<?=$finances->data?>" name="data" class="form-control" placeholder="Enter date">
+                                <?= ErrMgr::bind('data') ?>
+                            </div>
+                            <hr>
+                            <div class="top-margin">
+                                <label>Categoria <span class="text-danger">*</span></label>
+                                <input type="text" value="<?=$finances->tipocategoria?>" name="categoria" class="form-control" placeholder="Enter categoria">
+                                <?= ErrMgr::bind('categoria') ?>
+                            </div>
+                            <hr>
+                            <div class="top-margin">
+                                <label>Valor <span class="text-danger">*</span></label>
+                                <input type="text" value="<?=$finances->valor?>" name="valor" class="form-control" placeholder="Enter valor">
+                                <?= ErrMgr::bind('valor') ?>
+                            </div>
+
+                            <hr>
+
+                            <div class="col-lg-4 text-right">
+                                <button class="btn btn-action" type="submit">New</button>
+                            </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+
+    </div>
+
+    </article>
+    <!-- /Article -->
+
+</div>
+</div>	<!-- /container -->
+
+<?php Layout::includeLayout('footer') ?>
+
