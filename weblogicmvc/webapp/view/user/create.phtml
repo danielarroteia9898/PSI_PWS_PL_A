@@ -5,9 +5,9 @@ use ArmoredCore\WebObjects\URL;
 
 Layout::includeLayout('header') ?>
 <?php
-var_dump('fa');
-$finances = Data::get('finance')?>
-<?php ErrMgr::attach($finances) ?>
+
+$users = Data::get('user')?>
+<?php ErrMgr::attach($users) ?>
 
 
 <!-- container -->
@@ -18,43 +18,51 @@ $finances = Data::get('finance')?>
         <!-- Article main content -->
         <article class="col-xs-12 maincontent">
             <header class="page-header">
-                <h1 class="page-title">New Book</h1>
+                <h1 class="page-title">Registar/ Criar um novo utilizador</h1>
             </header>
 
             <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
                 <div class="panel panel-default">
                     <div class="panel-body">
                         <hr>
-                        <form method="post" action="<?=Url::toRoute('finance/store')?>">
+                        <form method="post" action="<?=Url::toRoute('user/store')?>">
                             <div class="top-margin">
-                                <label>Name <span class="text-danger">*</span></label>
-                                <input type="text" value="<?=$finances->name?>" name="name" class="form-control" placeholder="Enter name">
-                                <?= ErrMgr::bind('name') ?>
+                                <label>Name Completo<span class="text-danger">*</span></label>
+                                <input type="text" value="<?=$users->name?>" name="name" class="form-control" placeholder="Enter name">
+                                <?= ErrMgr::bind('nomecompleto') ?>
 
                             </div>
                             <hr>
                             <div class="top-margin">
-                                <label>Descricao <span class="text-danger">*</span></label>
-                                <input type="text" value="<?=$finances->descricao?>" name="descricao" class="form-control" placeholder="Enter descricao">
-                                <?= ErrMgr::bind('descricao') ?>
+                                <label>Data de Nascimento <span class="text-danger">*</span></label>
+                                <input type="datetime-local" value="<?=$users->datanascimento?>" name="dataNascimento" class="form-control" placeholder="Enter data de nascimento">
+                                <?= ErrMgr::bind('dtanascimento') ?>
                             </div>
                             <hr>
                             <div class="top-margin">
-                                <label>Data <span class="text-danger">*</span></label>
-                                <input type="datetime-local" value="<?=$finances->data?>" name="data" class="form-control" placeholder="Enter date">
-                                <?= ErrMgr::bind('data') ?>
+                                <label>Email <span class="text-danger">*</span></label>
+                                <input type="text" value="<?=$users->email?>" name="email" class="form-control" placeholder="Enter email">
+                                <?= ErrMgr::bind('email') ?>
                             </div>
                             <hr>
                             <div class="top-margin">
-                                <label>Categoria <span class="text-danger">*</span></label>
-                                <input type="text" value="<?=$finances->tipocategoria?>" name="categoria" class="form-control" placeholder="Enter categoria">
-                                <?= ErrMgr::bind('categoria') ?>
+                                <label>Contacto <span class="text-danger">*</span></label>
+                                <input type="text" value="<?=$users->telefone?>" name="contacto" class="form-control" placeholder="Enter numero de telefone">
+                                <?= ErrMgr::bind('telefone') ?>
                             </div>
                             <hr>
                             <div class="top-margin">
-                                <label>Valor <span class="text-danger">*</span></label>
-                                <input type="text" value="<?=$finances->valor?>" name="valor" class="form-control" placeholder="Enter valor">
-                                <?= ErrMgr::bind('valor') ?>
+                                <label>Username <span class="text-danger">*</span></label>
+                                <input type="text" value="<?=$users->username?>" name="username" class="form-control" placeholder="Enter um username">
+                                <?= ErrMgr::bind('username') ?>
+                            </div>
+
+                            <hr>
+
+                            <div class="top-margin">
+                                <label>Password <span class="text-danger">*</span></label>
+                                <input type="text" value="<?=$users->password?>" name="password" class="form-control" placeholder="Enter uma password">
+                                <?= ErrMgr::bind('password') ?>
                             </div>
 
                             <hr>

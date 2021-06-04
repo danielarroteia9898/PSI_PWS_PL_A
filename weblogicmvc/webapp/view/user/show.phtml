@@ -3,7 +3,7 @@ use ArmoredCore\WebObjects\Layout;
 use ArmoredCore\WebObjects\URL;
 
 Layout::includeLayout('header') ?>
-<?php $finances = Data::get('finances') ?>
+<?php $users = Data::get('user') ?>
 
 <!-- container -->
 <div class="container">
@@ -13,7 +13,7 @@ Layout::includeLayout('header') ?>
         <!-- Article main content -->
         <article class="col-xs-12 maincontent">
             <header class="page-header">
-                <h1 class="page-title">View Book</h1>
+                <h1 class="page-title">View Utilizadores</h1>
             </header>
 
             <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
@@ -21,26 +21,32 @@ Layout::includeLayout('header') ?>
                     <div class="panel-body">
                         <hr>
 
-                        <form method="post" action="<?=Url::toRoute('finance/index')?>">
+                        <form method="post" action="<?=Url::toRoute('user/index')?>">
                             <div class="top-margin">
                                 <label>ID <span class="text-danger">*</span></label>
-                                <input readonly="true" type="text" value="<?=$finances->idfinancas?>" name="id" class="form-control">
+                                <input readonly="true" type="text" value="<?=$users->idutilizador?>" name="id" class="form-control">
                             </div>
                             <div class="top-margin">
-                                <label>DESCRICAO <span class="text-danger">*</span></label>
-                                <input readonly="true" type="text" value="<?=$finances->descricao?>" name="descricao" class="form-control">
+                                <label>Nome completo <span class="text-danger">*</span></label>
+                                <input readonly="true" type="text" value="<?=$users->nomecompleto?>" name="nome" class="form-control">
                             </div>
                             <div class="top-margin">
-                                <label>CATEGORIA <span class="text-danger">*</span></label>
-                                <input readonly="true" type="text" value="<?=$finances->tipocategoria?>" name="categoria" class="form-control">
+                                <label>Data de Nascimento <span class="text-danger">*</span></label>
+                                <input readonly="true" type="text" value="<?=$users->dtanascimento?>" name="dtaNascimento" class="form-control">
                             </div>
                             <div class="top-margin">
-                                <label>DATA <span class="text-danger">*</span></label>
-                                <input readonly="true" type="text" value="<?=$finances->data?>" name="data" class="form-control">
+                                <label>Email <span class="text-danger">*</span></label>
+                                <input readonly="true" type="text" value="<?=$users->email?>" name="email" class="form-control">
                             </div>
                             <div class="top-margin">
-                                <label>VALOR <span class="text-danger">*</span></label>
-                                <input readonly="true" type="text" value="<?=$finances->valor?>" name="valor" class="form-control">
+                                <label>Telefone <span class="text-danger">*</span></label>
+                                <input readonly="true" type="text" value="<?=$users->telefone?>" name="telefoner" class="form-control">
+                            </div>
+                            <hr>
+
+                            <div class="top-margin">
+                                <label>Username <span class="text-danger">*</span></label>
+                                <input readonly="true" type="text" value="<?=$users->username?>" name="username" class="form-control">
                             </div>
                             <hr>
 

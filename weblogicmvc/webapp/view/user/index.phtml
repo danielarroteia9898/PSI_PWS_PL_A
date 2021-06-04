@@ -9,11 +9,11 @@ Layout::includeLayout('header') ?>
 <div class="container">
 
     <ol class="breadcrumb">
-        <li><a href="index.html">Home</a></li>
-        <li class="active">Book Index</li>
+        <li><a href="<?= URL::toRoute('home/index')?>">Home</a></li>
+        <li class="active">Utilizadores Index</li>
     </ol>
 
-    <h2 class="text-left top-space">Book Index</h2>
+    <h2 class="text-left top-space">Utilizadores Index</h2>
     <h2 class="top-space"></h2>
     <div class="row">
         <div class="col-sm-12">
@@ -21,23 +21,21 @@ Layout::includeLayout('header') ?>
                 <thead>
                 <th>
                     <h3>Id</h3></th>
-                <th><h3>data</h3>
-                </th><th><h3>valor</h3></th>
+                <th><h3>Nome Completo</h3>
+                </th><th><h3>Telefone</h3></th>
                 </thead>
                 <tbody>
-                <?php foreach ($ticktes as $tickte) { ?>
+                <?php foreach ($users as $user) { ?>
                     <tr>
-                        <td><?=$tickte->idBilhete?></td>
-                        <td><?=$tickte->preco?></td>
-                        <td><?=$tickte->dataHoraCompraPassagem?></td>
-                        <td><?=$tickte->Checkin?></td>
-                        <td><?=$tickte->VooVolta?></td>
-                        <td><?=$tickte->VooIda?></td>
+                        <td><?=$user->id?></td>
+                        <td><?=$user->nomecompleto?></td>
+                        <td><?=$user->telefone?></td>
+
                         <td>
 
-                            <a href="<?=Url::toRoute('ticket/show', $tickte->id)?>" class="btn btn-info" role="button">Show</a>
-                            <a href="<?=Url::toRoute('ticket/edit', $tickte->id)?>" class="btn btn-info" role="button">Edit</a>
-                            <a href="<?=Url::toRoute('ticket/destroy', $tickte->id)?>" class="btn btn-warning" role="button">Delete</a>
+                            <a href="<?=Url::toRoute('user/show', $user->id)?>" class="btn btn-info" role="button">Show</a>
+                            <a href="<?=Url::toRoute('user/edit', $user->id)?>" class="btn btn-info" role="button">Edit</a>
+                            <a href="<?=Url::toRoute('user/destroy', $user->id)?>" class="btn btn-warning" role="button">Delete</a>
 
                         </td>
                     </tr>
@@ -51,7 +49,7 @@ Layout::includeLayout('header') ?>
         <div class="col-sm-6">
             <h3>Create a new Book</h3>
             <p>
-                <a href="<?=Url::toRoute('ticket/create')?>" class="btn btn-info" role="button">New</a>
+                <a href="<?=Url::toRoute('user/create')?>" class="btn btn-info" role="button">New</a>
             </p>
         </div>
     </div> <!-- /row -->

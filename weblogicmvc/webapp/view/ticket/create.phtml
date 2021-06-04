@@ -35,20 +35,8 @@ $tickets = Data::get('ticket')?>
                             <hr>
                             <div class="top-margin">
                                 <label>Data e hora da compra do bilhete <span class="text-danger">*</span></label>
-                                <input type="text" value="<?=$tickets->dtaHoraPassagemCompra?>" name="dataHora" class="form-control" placeholder="Enter pagamento">
-                                <?= ErrMgr::bind('dtaHoraPassagemCompra') ?>
-                            </div>
-                            <hr>
-                            <div class="top-margin">
-                                <label>Data <span class="text-danger">*</span></label>
-                                <input type="datetime-local" value="<?=$finances->data?>" name="data" class="form-control" placeholder="Enter date">
-                                <?= ErrMgr::bind('data') ?>
-                            </div>
-                            <hr>
-                            <div class="top-margin">
-                                <label>Utilizador <span class="text-danger">*</span></label>
-                                <input type="text" value="<?=$tickets->idUtilizador?>" name="utilizador" class="form-control" placeholder="Enter id do Utilizador">
-                                <?= ErrMgr::bind('idUtilizador') ?>
+                                <input type="datetime-local" value="<?=$tickets->dtaHoraPassagemCompra?>" name="dataHora" class="form-control" placeholder="Enter pagamento">
+                                <?= ErrMgr::bind('dtahorapassagemcompra') ?>
                             </div>
                             <hr>
                             <div class="top-margin">
