@@ -18,13 +18,16 @@ Router::get('home/index',	'HomeController/index');
 Router::get('home/start',	'HomeController/start');
 Router::get('test/index',  'TestController/index');
 
+
 //router::post('user/show','homeController/login');
 Router::get('home/login', 'HomeController/login');
+Router::get('home/username', 'HomeController/index');
 
 Router::resource('ticket', 'TicketController');
 Router::resource('user', 'UserController');
+Router::resource('flight', 'FlightController');
 
-
+Router::post('user/create', 'UserController/create');
 
 
 

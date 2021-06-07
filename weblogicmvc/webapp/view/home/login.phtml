@@ -1,4 +1,6 @@
 <?php use ArmoredCore\WebObjects\Layout;
+use ArmoredCore\WebObjects\URL;
+use ArmoredCore\WebObjects\Data;
 
 Layout::includeLayout('header') ?>
 
@@ -22,10 +24,13 @@ Layout::includeLayout('header') ?>
 					<div class="panel panel-default">
 						<div class="panel-body">
 							<h3 class="thin text-center">Sign in to your account</h3>
-							<p class="text-center text-muted">Lorem ipsum dolor sit amet, <a href="signup.html">Register</a> adipisicing elit. Quo nulla quibusdam cum doloremque incidunt nemo sunt a tenetur omnis odio. </p>
+							<p class="text-center text-muted">Se ainda não está registado, clique no botão disponivel. </p>
+                            <p>
+                                <a href="<?=Url::toRoute('user/create')?>" class="btn btn-info" role="button">Registar</a>
+                            </p>
 							<hr>
 							
-							<form >
+							<form method="post" action="<?=Url::toRoute('user/store')?>>
 								<div class="top-margin">
 									<label>Username/Email <span class="text-danger">*</span></label>
 									<input type="text" class="form-control" name="username">
