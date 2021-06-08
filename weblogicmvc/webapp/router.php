@@ -27,7 +27,7 @@ Router::resource('ticket', 'TicketController');
 Router::resource('user', 'UserController');
 Router::resource('flight', 'FlightController');
 
-Router::post('user/create', 'UserController/create');
+//Router::post('user/create', 'UserController/create');
 
 
 

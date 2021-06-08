@@ -28,7 +28,7 @@ Layout::includeLayout('header') ?>
                 <?php foreach ($ticktes as $tickte) { ?>
                     <tr>
                         <td><?=$tickte->idBilhete?></td>
-                        <td><?=$tickte->dataHoraCompraPassagem?></td>
+                        <td><?=$tickte->datahorapassagemcompra?></td>
                         <td><?=$tickte->preco?></td>
                         <td>
 
@@ -46,7 +46,7 @@ Layout::includeLayout('header') ?>
 
         </div>
         <div class="col-sm-6">
-            <h3>Create a new Book</h3>
+            <h3>Criar/Introduzir um novo bilhete</h3>
             <p>
                 <a href="<?=Url::toRoute('ticket/create')?>" class="btn btn-info" role="button">New</a>
             </p>

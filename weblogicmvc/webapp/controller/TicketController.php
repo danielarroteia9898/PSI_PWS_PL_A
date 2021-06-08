@@ -71,7 +71,7 @@ class TicketController extends BaseController
 
     public function destroy($id)
     {
-        $tickets = finance::find([$id]);
+        $tickets = Ticket::find([$id]);
         $tickets->delete();
         Redirect::toRoute('ticket/index');
     }

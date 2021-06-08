@@ -28,14 +28,14 @@ $users = Data::get('user')?>
                         <form method="post" action="<?=Url::toRoute('user/store')?>">
                             <div class="top-margin">
                                 <label>Name Completo<span class="text-danger">*</span></label>
-                                <input type="text" value="<?=$users->name?>" name="name" class="form-control" placeholder="Enter name">
+                                <input type="text" value="<?=$users->nomecompleto?>" name="nomecompleto" class="form-control" placeholder="Enter name">
                                 <?= ErrMgr::bind('nomecompleto') ?>
 
                             </div>
                             <hr>
                             <div class="top-margin">
                                 <label>Data de Nascimento <span class="text-danger">*</span></label>
-                                <input type="datetime-local" value="<?=$users->datanascimento?>" name="dataNascimento" class="form-control" placeholder="Enter data de nascimento">
+                                <input type="datetime-local" value="<?=$users->dtanascimento?>" name="dtanascimento" class="form-control" placeholder="Enter data de nascimento">
                                 <?= ErrMgr::bind('dtanascimento') ?>
                             </div>
                             <hr>
@@ -47,7 +47,7 @@ $users = Data::get('user')?>
                             <hr>
                             <div class="top-margin">
                                 <label>Contacto <span class="text-danger">*</span></label>
-                                <input type="text" value="<?=$users->telefone?>" name="contacto" class="form-control" placeholder="Enter numero de telefone">
+                                <input type="text" value="<?=$users->telefone?>" name="telefone" class="form-control" placeholder="Enter numero de telefone">
                                 <?= ErrMgr::bind('telefone') ?>
                             </div>
                             <hr>
