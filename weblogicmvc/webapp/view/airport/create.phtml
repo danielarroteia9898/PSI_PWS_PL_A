@@ -5,10 +5,8 @@ use ArmoredCore\WebObjects\Layout;
 use ArmoredCore\WebObjects\URL;
 
 Layout::includeLayout('header') ?>
-<?php
-
-$airports = Data::get('airport')?>
-<?php ErrMgr::attach($airports) ?>
+<?php $airport = Data::get('airport')?>
+<?php ErrMgr::attach($airport) ?>
 
 
 <!-- container -->
@@ -27,18 +25,21 @@ $airports = Data::get('airport')?>
                     <div class="panel-body">
                         <hr>
                         <form method="post" action="<?=Url::toRoute('airport/store')?>">
-                           < div class="top-margin">
+                           <div class="top-margin">
                                 <label>Nome <span class="text-danger">*</span></label>
-                                <input type="text" value="<?=$airports->nome?>" name="nome" class="form-control" placeholder="Nome do Aeroporto">
+                                <input type="text" value="<?=$airport->nome?>" name="nome" class="form-control" placeholder="Nome do Aeroporto">
                                 <?= ErrMgr::bind('nomeAeroporto') ?>
 
                             </div>
                             <hr>
                             <div class="top-margin">
                                 <label>Localização <span class="text-danger">*</span></label>
-                                <input type="text" value="<?=$airports->localidade?>" name="localização" class="form-control" placeholder="Localização do Aeroporto">
+                                <input type="text" value="<?=$airport->localidade?>" name="localização" class="form-control" placeholder="Localização do Aeroporto">
                                 <?= ErrMgr::bind('localidadeAeroporto') ?>
                             </div>
+                    </div>
+                    <div class="col-lg-4 text-right">
+                        <button class="btn btn-action" type="submit">New</button>
                     </div>
                     </form>
                 </div>
@@ -50,7 +51,6 @@ $airports = Data::get('airport')?>
     <!-- /Article -->
 
 </div>
-</div>	<!-- /container -->
 
 <?php Layout::includeLayout('footer') ?>
 

@@ -61,7 +61,7 @@ $users = Data::get('user')?>
 
                             <div class="top-margin">
                                 <label>Password <span class="text-danger">*</span></label>
-                                <input type="text" value="<?=$users->password?>" name="password" class="form-control" placeholder="Enter uma password">
+                                <input type="password" value="<?=$users->password?>" name="password" class="form-control" placeholder="Enter uma password">
                                 <?= ErrMgr::bind('password') ?>
                             </div>
 

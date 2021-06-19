@@ -5,7 +5,7 @@ use ArmoredCore\WebObjects\Post;
 use ArmoredCore\WebObjects\Redirect;
 use ArmoredCore\WebObjects\View;
 
-class flightController
+class FlightController
 
     implements ResourceControllerInterface
 {

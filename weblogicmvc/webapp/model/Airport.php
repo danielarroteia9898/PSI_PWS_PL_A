@@ -2,7 +2,8 @@
 
 use ActiveRecord\Model;
 
-class Airport
+class Airport  extends Model
 {
+
 
 }

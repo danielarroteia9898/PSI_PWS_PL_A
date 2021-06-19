@@ -5,9 +5,7 @@ use ArmoredCore\WebObjects\Post;
 use ArmoredCore\WebObjects\Redirect;
 use ArmoredCore\WebObjects\View;
 
-class TicketController extends BaseController
-
-    implements ResourceControllerInterface
+class TicketController extends BaseController implements ResourceControllerInterface
 {
     public function index()
     {
