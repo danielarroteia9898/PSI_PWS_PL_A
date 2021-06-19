@@ -9,10 +9,9 @@ class User extends Model
         'ticket' => array('ticket', ['foreignKey' => 'idutilizador]
             )
     );
-
-
+*/
 }
-
+/*
 $user = User::first();
 
 $ticket = $user->create_ticket(array('precopassagem', 'dtacomprapassagem' => 1));

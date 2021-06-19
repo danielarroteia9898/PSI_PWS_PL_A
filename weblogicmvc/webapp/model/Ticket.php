@@ -11,6 +11,7 @@ class Ticket extends Model
     public static array $has_one = array(
         array('flight')
     );
+
 }
 
 $ticket = Ticket::first();

@@ -26,7 +26,7 @@ Router::get('home/username', 'HomeController/index');
 Router::resource('ticket', 'TicketController');
 Router::resource('user', 'UserController');
 Router::resource('flight', 'FlightController');
-
+Router::resource('airport','AirportController');
 //Router::post('user/create', 'UserController/create');
 
 
