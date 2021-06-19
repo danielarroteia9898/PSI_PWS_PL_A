@@ -1,0 +1,72 @@
+<?php use ArmoredCore\WebObjects\Data;
+use ArmoredCore\WebObjects\ErrMgr;
+use ArmoredCore\WebObjects\Layout;
+use ArmoredCore\WebObjects\URL;
+
+Layout::includeLayout('header') ?>
+<?php $plane = Data::get('plane') ?>
+<?php ErrMgr::attach($plane) ?>
+
+    <!-- container -->
+    <div class="container">
+
+        <div class="row">
+
+            <!-- Article main content -->
+            <article class="col-xs-12 maincontent">
+                <header class="page-header">
+                    <h1 class="page-title">Edit plane</h1>
+                </header>
+
+
+                <div class="panel panel-default">
+                    <div class="panel-body">
+
+                        <hr>
+
+
+                        <form class="form-horizontal" method="post" action="<?=Url::toRoute('plane/update', $plane->id)?>">
+
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="name">Name:<span class="text-danger">*</span></label>
+                                <div class="col-sm-6">
+                                    <input type="text" value="<?=$plane->nome?>" class="form-control" required name="name" placeholder="Nome do Avião">
+                                    <?= ErrMgr::bind('nomeAvião') ?>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="name">Referencia:<span class="text-danger">*</span></label>
+                                <div class="col-sm-6">
+                                    <input type="text" required value="<?=$plane->referencia?>" class="form-control" name="referencia" placeholder="Referência do Avião">
+                                    <?= ErrMgr::bind('referenciaAvião') ?>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="name">Lotacao:<span class="text-danger">*</span></label>
+                                <div class="col-sm-6">
+                                    <input type="number" required value="<?=$plane->lotacao?>" name="lotacao" class="form-control" placeholder="Lotação do Avião">
+                                    <?= ErrMgr::bind('lotacaoAviao') ?>
+                                </div>
+                            </div>
+
+
+                            <hr>
+
+                            <div class="col-lg-4 text-right">
+                                <button class="btn btn-default" type="submit">Save</button>
+                            </div>
+                    </div>
+                    </form>
+                </div>
+        </div>
+
+
+
+        </article>
+        <!-- /Article -->
+
+    </div>
+    </div>	<!-- /container -->
+
+<?php Layout::includeLayout('footer') ?>
