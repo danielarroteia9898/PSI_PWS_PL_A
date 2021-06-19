@@ -23,36 +23,36 @@ class userController
 
     public function store()
     {
-        $users = new User(Post::getAll());
+        $user = new User(Post::getAll());
 
-        if($users->is_valid()){
-            $users->save();
+        if($user->is_valid()){
+            $user->save();
             Redirect::toRoute('user/index');
         } else {
             //redirect to form with data and errors
-            Redirect::flashToRoute('user/create', ['user' => $users]);
+            Redirect::flashToRoute('user/create', ['user' => $user]);
         }
     }
 
     public function show($id)
     {
-        $users = User::find([$id]);
+        $user = User::find([$id]);
 
-        if (is_null($users)) {
+        if (is_null($user)) {
             //TODO redirect to standard error page
         } else {
-            return View::make('user.show', ['user' => $users]);
+            return View::make('user.show', ['user' => $user]);
         }
     }
 
     public function edit($id)
     {
-        $users = User::find([$id]);
+        $user = User::find([$id]);
 
-        if (is_null($users)) {
+        if (is_null($user)) {
             //TODO redirect to standard error page
         } else {
-            return View::make('user.edit', ['user' => $users]);
+            return View::make('user.edit', ['user' => $user]);
         }
     }
 

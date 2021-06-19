@@ -21,14 +21,28 @@ Layout::includeLayout('header'); ?>
     <!-- Intro -->
     <div class="container text-center">
         <br>
-        <img width="25%" height="25%" src="<?=Asset::image('weblogos-small.png')?>">
+        <h2 class="thin">Pesquisa aqui:</h2>
+        <form method="post" action="<?=Url::toRoute('flight/index')?>">
+            <tr>
+            <td></td><label>Identique o voo que pretende</label>
+            <td></td><input type="text" name="PesquisarVoo" placeholder="indique o voo">
+            <input type="submit" name="">
+
+                <td></td><label>Identique o voo que pretende</label>
+                <td></td><input type="text" name="PesquisarVoo" placeholder="indique o voo">
+                <input type="submit" name="">
+            </tr>
+
+        </form>
+        <!--
+        <img width="25%" height="25%" src="<//?=//Asset::image('weblogos-small.png')?>">
         <h2 class="thin">Learn Here . . . Work Everywhere.</h2>
         <br>
         <p class="text-muted">
             Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away.
         </p>
         <h2 class="thin">Learn Today . . . Lead Tomorrow.</h2>
-
+            -->
     </div>
     <!-- /Intro-->
 
