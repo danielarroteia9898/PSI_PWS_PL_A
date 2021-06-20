@@ -20,14 +20,14 @@ class PlaneController extends BaseController implements ResourceControllerInterf
 
     public function store()
     {
-        $planes = new Plane(Post::getAll());
+        $plane = new Plane(Post::getAll());
 
-        if($planes->is_valid()){
-            $planes->save();
+        if($plane->is_valid()){
+            $plane->save();
             Redirect::toRoute('plane/index');
         } else {
             //redirect to form with data and errors
-            Redirect::flashToRoute('plane/create', ['plane' => $planes]);
+            Redirect::flashToRoute('plane/create', ['plane' => $plane]);
         }
     }
 

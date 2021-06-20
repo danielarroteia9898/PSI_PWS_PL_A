@@ -79,16 +79,18 @@ class UserController extends BaseController   implements ResourceControllerInter
         $username = Post::get('username');
         $password = Post::get('password');
 
-        $user = User::find_by_username_and_pasword($username, $password);
+        $users = User::find_by_username_and_password($username, $password);
 
-        if(is_null($user)){
-            URL::toRoute('home/login');
-
+        if(is_null($users)){
+            Redirect::toRoute('home/index');
         }
         else
         {
             \ArmoredCore\WebObjects\Session::set('user', $user);
             \ArmoredCore\WebObjects\URL::toRoute('home/index');
+            Session::set('user', $users);
+            Redirect::toRoute('home/index');
+
 
         }
     }
