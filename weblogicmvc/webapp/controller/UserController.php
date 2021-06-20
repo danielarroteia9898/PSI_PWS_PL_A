@@ -88,7 +88,7 @@ class UserController extends BaseController   implements ResourceControllerInter
         else
         {
             \ArmoredCore\WebObjects\Session::set('user', $user);
-
+            \ArmoredCore\WebObjects\URL::toRoute('home/index');
 
         }
     }

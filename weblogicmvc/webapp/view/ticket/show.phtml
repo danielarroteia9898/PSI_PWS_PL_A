@@ -24,28 +24,28 @@ Layout::includeLayout('header') ?>
                         <form method="post" action="<?=Url::toRoute('ticket/index')?>">
                             <div class="top-margin">
                                 <label>ID <span class="text-danger">*</span></label>
-                                <input readonly="true" type="text" value="<?=$tickets->idticket?>" name="id" class="form-control">
+                                <input readonly="true" type="text" value="<?=$tickets->idbilhete?>" name="idbilhete" class="form-control">
                             </div>
                             <div class="top-margin">
                                 <label>Preço da Passagem <span class="text-danger">*</span></label>
-                                <input readonly="true" type="text" value="<?=$tickets->precoPagassagem?>" name="preco" class="form-control">
+                                <input readonly="true" type="text" value="<?=$tickets->precopagassagem?>" name="precopassagem" class="form-control">
                             </div>
                             <div class="top-margin">
                                 <label>Data e hora da compra da passagem <span class="text-danger">*</span></label>
-                                <input readonly="true" type="text" value="<?=$tickets->dtaHoraPassagemCompra?>" name="compraBilhete" class="form-control">
+                                <input readonly="true" type="text" value="<?=$tickets->dtahorapassagemcompra?>" name="dtahorapassagemcompra" class="form-control">
                             </div>
                             <div class="top-margin">
                                 <label> Utilizador <span class="text-danger">*</span></label>
-                                <input readonly="true" type="text" value="<?=$tickets->idUtilizador?>" name="utilizador" class="form-control">
+                                <input readonly="true" type="text" value="<?=$tickets->idutilizador?>" name="idutilizador" class="form-control">
                             </div>
                             <div class="top-margin">
                                 <label>Ida <span class="text-danger">*</span></label>
-                                <input readonly="true" type="text" value="<?=$tickets->idVooIda?>" name="IdaVoo" class="form-control">
+                                <input readonly="true" type="text" value="<?=$tickets->idvooida?>" name="idvooida" class="form-control">
                             </div>
 
                             <div class="top-margin">
                                 <label>Volta <span class="text-danger">*</span></label>
-                                <input readonly="true" type="text" value="<?=$tickets->idVooVolta?>" name="VoltaVoo" class="form-control">
+                                <input readonly="true" type="text" value="<?=$tickets->idvoovolta?>" name="idvoovolta" class="form-control">
                             </div>
 
 

@@ -26,20 +26,20 @@ Layout::includeLayout('header') ?>
                         <form method="post" action="<?=Url::toRoute('ticket/store')?>">
                             <div class="top-margin">
                                 <label>Preço <span class="text-danger">*</span></label>
-                                <input type="text" value="<?=$tickets->preco?>" name="preco" class="form-control" placeholder="Enter preço da passagem">
+                                <input type="text" value="<?=$tickets->precopassagem?>" name="precopasagem" class="form-control" placeholder="Enter preço da passagem">
                                 <?= ErrMgr::bind('precopassagem') ?>
 
                             </div>
                             <hr>
                             <div class="top-margin">
                                 <label>Data e hora da compra do bilhete <span class="text-danger">*</span></label>
-                                <input type="datetime-local" value="<?=$tickets->dtahorapassagemcompra?>" name="dataHora" class="form-control" placeholder="Enter pagamento">
+                                <input type="datetime-local" value="<?=$tickets->dtahorapassagemcompra?>" name="dtahorapassagemcompra" class="form-control" placeholder="Enter pagamento">
                                 <?= ErrMgr::bind('dtahorapassagemcompra') ?>
                             </div>
                             <hr>
                             <div class="top-margin">
                                 <label>Ida <span class="text-danger">*</span></label>
-                                <input type="text" value="<?=$tickets->idvooida?>" name="VooIda" class="form-control" placeholder="Enter se é um voo de ida">
+                                <input type="text" value="<?=$tickets->idvooida?>" name="idvooida" class="form-control" placeholder="Enter se é um voo de ida">
                                 <?= ErrMgr::bind('idvooida') ?>
                             </div>
 
@@ -47,7 +47,7 @@ Layout::includeLayout('header') ?>
 
                             <div class="top-margin">
                                 <label>Volta <span class="text-danger">*</span></label>
-                                <input type="text" value="<?=$tickets->idvoovolta?>" name="VooVolta" class="form-control" placeholder="Enter se é um voo de ida e volta">
+                                <input type="text" value="<?=$tickets->idvoovolta?>" name="idvoovolta" class="form-control" placeholder="Enter se é um voo de ida e volta">
                                 <?= ErrMgr::bind('idvoovolta') ?>
                             </div>
                             <hr>

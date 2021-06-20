@@ -27,9 +27,9 @@ Layout::includeLayout('header') ?>
                 <tbody>
                 <?php foreach ($ticktes as $tickte) { ?>
                     <tr>
-                        <td><?=$tickte->idBilhete?></td>
-                        <td><?=$tickte->datahorapassagemcompra?></td>
-                        <td><?=$tickte->preco?></td>
+                        <td><?=$tickte->idbilhete?></td>
+                        <td><?=$tickte->dtahorapassagemcompra?></td>
+                        <td><?=$tickte->precopassagem?></td>
                         <td>
 
                             <a href="<?=Url::toRoute('ticket/show', $tickte->id)?>" class="btn btn-info" role="button">Show</a>

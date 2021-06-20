@@ -1,0 +1,65 @@
+<?php use ArmoredCore\WebObjects\Data;
+use ArmoredCore\WebObjects\ErrMgr;
+use ArmoredCore\WebObjects\Layout;
+use ArmoredCore\WebObjects\URL;
+
+Layout::includeLayout('header') ?>
+<?php $flights = Data::get('flight') ?>
+<?php ErrMgr::attach($flights) ?>
+
+<!-- container -->
+<div class="container">
+
+    <div class="row">
+
+        <!-- Article main content -->
+        <article class="col-xs-12 maincontent">
+            <header class="page-header">
+                <h1 class="page-title">Editar Voos</h1>
+            </header>
+
+
+            <div class="panel panel-default">
+                <div class="panel-body">
+
+                    <hr>
+
+
+                    <form class="form-horizontal" method="post" action="<?=Url::toRoute('user/update', $flights->id)?>">
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="name">Id do Aeroporto:<span class="text-danger">*</span></label>
+                            <div class="col-sm-6">
+                                <input type="text" required value="<?=$flights->idaeroporto?>" name="aeroporto" class="form-control" placeholder="Enter o id do aeroporto">
+                                <?= ErrMgr::bind('idaeroporto') ?>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="name">Data de Nascimento:<span class="text-danger">*</span></label>
+                            <div class="col-sm-6">
+                                <input type="text" required value="<?=$flights->precovoo?>" name="preco" class="form-control" placeholder="Enter o preço do voo">
+                                <?= ErrMgr::bind('precovoo') ?>
+                            </div>
+                        </div>
+
+
+                        <hr>
+
+                        <div class="col-lg-4 text-right">
+                            <button class="btn btn-default" type="submit">Save</button>
+                        </div>
+                </div>
+                </form>
+            </div>
+    </div>
+
+
+
+    </article>
+    <!-- /Article -->
+
+</div>
+</div>	<!-- /container -->
+
+<?php Layout::includeLayout('footer') ?>

@@ -22,19 +22,100 @@ Layout::includeLayout('header'); ?>
     <div class="container text-center">
         <br>
 
-        <h2 class="thin">Pesquisa aqui:</h2>
-        <form method="post" action="<?=Url::toRoute('flight/index')?>">
-            <tr>
-            <td></td><label>Identique o voo que pretende</label>
-            <td></td><input type="text" name="PesquisarVoo" placeholder="indique o voo">
-            <input type="submit" name="">
 
-                <td></td><label>Identique o voo que pretende</label>
-                <td></td><input type="datetime-local" name="PesquisarVoo" placeholder="indique o voo">
-                <input type="submit" name="">
+        <h2 class="thin">Pesquisa aqui:</h2>
+        <form  method="post" action="<?=Url::toRoute('flight/index')?>">
+
+            <tr>
+                <td><label>Ida/volta: </label></td>
+                <td><select class="column">
+
+                    <option value="Sim"> Sim, de ida e volta</option>
+                    <option value="Nnao">Não, só de ida</option>
+                </select></td>
             </tr>
 
+            <tr>
+              <td>  <label>Origem do voo</label></td>
+                <td><input type="text" name="PesquisarVooOrigem" placeholder="indique a origem" value="<?php if(isset($_GET["pesquisar"])) echo $_GET["pesquisar"]; ?>"></td>
+
+            </tr>
+
+            <tr>
+
+                <td><label>Destino do voo</label></td>
+                <td><input type="text" name="PesquisarVooDestino" placeholder="indique o destino"></td>
+
+            </tr>
+
+            <tr>
+
+                <td><label>Partida</label></td>
+                <td><input type="date" name="dataPartida" placeholder="indique o destino"></td>
+
+            </tr>
+
+            <tr>
+
+                <td><label>Retorno</label></td>
+                <td><input type="date" name="dataRetorno" placeholder="indique o destino"></td>
+
+            </tr>
+                <br>
+
+                <div class="text-center">
+                <button class="btn btn-action" name="pesquisar" type="submit">Pesquisar</button>
+                </div>
+                <br>
         </form>
+        <br>
+        <div class="table-responsive">
+
+            <table class="table table-bordered">
+                <?php
+                if(isset($_POST["pesquisar"]))
+                {
+                    $flights = Flight::find_by_title('');
+                    // $sql_query = "SELECT * FROM flight WHERE idvooorigem like '%".$_GET["pesquisar"]."%'";
+                    //$result = mysqli_query($flights);
+
+                    if($flights > 0)
+                    {
+                        while ($row = $flights->fetch())
+                        {
+                            echo '<tr><td>'.$row.'</td></tr>';
+                        }
+                    }
+                    else
+                    {
+                        echo '<label>Não foram encontrados resultados</label>';
+                    }
+                }
+                ?>
+                /*
+                if(isset($_GET["pesquisar"]))
+                {
+
+                    $flights = Flight::find_by_title('');
+                   // $sql_query = "SELECT * FROM flight WHERE idvooorigem like '%".$_GET["pesquisar"]."%'";
+                    $result = mysqli_query($flights);
+
+                    if(mysqli_num_rows($result) > 0)
+                    {
+                        while ($row = mysqli_fetch_array($result)->fetch())
+                        {
+                            echo '<tr><td>'.$row.'</td></tr>';
+                        }
+                    }else
+                        {
+                            echo '<label>Não foram encontrados resultados</label>';
+                        }
+                }
+                ?>
+                    */
+            </table>
+        </div>
+
         <!--
         <img width="25%" height="25%" src="<//?=//Asset::image('weblogos-small.png')?>">
         <h2 class="thin">Learn Here . . . Work Everywhere.</h2>

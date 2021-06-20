@@ -30,7 +30,7 @@ Layout::includeLayout('header') ?>
                         <div class="form-group">
                             <label class="control-label col-sm-2" for="name">preço:<span class="text-danger">*</span></label>
                             <div class="col-sm-6">
-                                <input type="text" required value="<?=$tickets->preco?>" name="preco" class="form-control" placeholder="Enter preço da passagem">
+                                <input type="text" required value="<?=$tickets->precopassagem?>" name="preco" class="form-control" placeholder="Enter preço da passagem">
                                 <?= ErrMgr::bind('precopassagem') ?>
                             </div>
                         </div>
@@ -38,7 +38,7 @@ Layout::includeLayout('header') ?>
                         <div class="form-group">
                             <label class="control-label col-sm-2" for="name">Data e hora da compra:<span class="text-danger">*</span></label>
                             <div class="col-sm-6">
-                                <input type="datetime-local" value="<?=$tickets->dtahorapassagemcompra?>" name="dataHora" class="form-control" placeholder="Enter pagamento">
+                                <input type="datetime-local" required value="<?=$tickets->dtahorapassagemcompra?>" name="dataHora" class="form-control" placeholder="Enter pagamento">
                                 <?= ErrMgr::bind('dtahorapassagemcompra') ?>
                             </div>
                         </div>
@@ -46,7 +46,7 @@ Layout::includeLayout('header') ?>
                         <div class="form-group">
                             <label class="control-label col-sm-2" for="name">Voo de ida:<span class="text-danger">*</span></label>
                             <div class="col-sm-6">
-                                <input type="text" value="<?=$tickets->idcooida?>" name="VooIda" class="form-control" placeholder="Enter se é um voo de ida">
+                                <input type="text" required value="<?=$tickets->idvooida?>" name="VooIda" class="form-control" placeholder="Enter se é um voo de ida">
                                 <?= ErrMgr::bind('idvooida') ?>
                             </div>
                         </div>
@@ -54,7 +54,7 @@ Layout::includeLayout('header') ?>
                         <div class="form-group">
                             <label class="control-label col-sm-2" for="name">Voo de volta:<span class="text-danger">*</span></label>
                             <div class="col-sm-6">
-                                <input type="text" value="<?=$tickets->idvoovolta?>" name="VooVolta" class="form-control" placeholder="Enter se é um voo de ida e volta">
+                                <input type="text" required value="<?=$tickets->idvoovolta?>" name="VooVolta" class="form-control" placeholder="Enter se é um voo de ida e volta">
                                 <?= ErrMgr::bind('idvoovolta') ?>
                             </div>
                         </div>
@@ -62,7 +62,7 @@ Layout::includeLayout('header') ?>
                         <div class="form-group">
                             <label class="control-label col-sm-2" for="name">Check-IN:<span class="text-danger">*</span></label>
                             <div class="col-sm-6">
-                            <input  type="text" value="<?=$tickets->Ckeckin?>" name="CheckIn" class="form-control">
+                            <input  type="text"  value="<?=$tickets->checkin?>" name="CheckIn" class="form-control">
                             <select class="column">
 
                                 <option value="S"> Sim</option>
