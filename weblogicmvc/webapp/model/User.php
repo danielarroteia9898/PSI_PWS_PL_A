@@ -11,10 +11,11 @@ class User extends Model
     );
 */
 
-/*
-$user = User::first();
+    /*
+    $user = User::first();
+    $user = User::first();
 
-$ticket = $user->create_ticket(array('precopassagem', 'dtacomprapassagem' => 1));
-    */
-
+    $ticket = $user->create_ticket(array('precopassagem', 'dtacomprapassagem' => 1));
+        */
+}
 
