@@ -17,5 +17,6 @@ class User extends Model
 
     $ticket = $user->create_ticket(array('precopassagem', 'dtacomprapassagem' => 1));
         */
+
 }
 

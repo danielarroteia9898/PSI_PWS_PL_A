@@ -28,20 +28,18 @@ Layout::includeLayout('header') ?>
                            <div class="top-margin">
                                 <label>Nome <span class="text-danger">*</span></label>
                                 <input type="text" value="<?=$planes->nome?>" name="nome" class="form-control" placeholder="Nome do Avião">
-                                <?= ErrMgr::bind('nomeAviao') ?>
+                                <?= ErrMgr::bind('nomeaviao') ?>
 
                             </div>
-                            <hr>
                             <div class="top-margin">
                                 <label>Referência <span class="text-danger">*</span></label>
                                 <input type="text" value="<?=$planes->referencia?>" name="referencia" class="form-control" placeholder="Referência do Avião">
-                                <?= ErrMgr::bind('referenciaAviao') ?>
+                                <?= ErrMgr::bind('referenciaaviao') ?>
                             </div>
-                            <hr>
                             <div class="top-margin">
                                 <label>Lotação <span class="text-danger">*</span></label>
                                 <input type="text" value="<?=$planes->lotacao?>" name="lotacao" class="form-control" placeholder="Lotação do Avião">
-                                <?= ErrMgr::bind('lotacaoAviao') ?>
+                                <?= ErrMgr::bind('lotacaoaviao') ?>
                             </div>
                     </div>
                     <div class="col-lg-4 text-right">

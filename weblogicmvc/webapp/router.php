@@ -20,7 +20,6 @@ Router::get('test/index',  'TestController/index');
 
 
 //router::post('user/show','homeController/login');
-Router::get('home/login', 'HomeController/login');
 Router::get('home/username', 'HomeController/index');
 
 Router::resource('ticket', 'TicketController');
