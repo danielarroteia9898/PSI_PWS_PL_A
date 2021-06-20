@@ -5,9 +5,7 @@ use ArmoredCore\WebObjects\Post;
 use ArmoredCore\WebObjects\Redirect;
 use ArmoredCore\WebObjects\View;
 
-class userController
-
-    implements ResourceControllerInterface
+class UserController extends BaseController   implements ResourceControllerInterface
 {
 
     public function index()

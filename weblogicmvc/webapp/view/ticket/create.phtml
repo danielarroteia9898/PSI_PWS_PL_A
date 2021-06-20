@@ -4,9 +4,7 @@ use ArmoredCore\WebObjects\Layout;
 use ArmoredCore\WebObjects\URL;
 
 Layout::includeLayout('header') ?>
-<?php
-
-$tickets = Data::get('ticket')?>
+<?php $tickets = Data::get('ticket')?>
 <?php ErrMgr::attach($tickets) ?>
 
 

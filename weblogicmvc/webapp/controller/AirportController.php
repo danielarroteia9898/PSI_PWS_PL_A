@@ -22,31 +22,36 @@ class AirportController extends BaseController
 
     public function store()
     {
-        $airports = new Airport(Post::getAll());
-        $airports->save();
-        Redirect::toRoute('airport/index');
+        $airport = new Airport(Post::getAll());
 
+        if($airport->is_valid()){
+            $airport->save();
+            Redirect::toRoute('airport/index');
+        } else {
+            //redirect to form with data and errors
+            Redirect::flashToRoute('airport/create', ['airport' => $airport]);
+        }
     }
 
     public function show($id)
     {
-        $airports = Airport::find([$id]);
+        $airport = Airport::find([$id]);
 
-        if (is_null($airports)) {
+        if (is_null($airport)) {
             //TODO redirect to standard error page
         } else {
-            return View::make('airport.show', ['airport' => $airports]);
+            return View::make('airport.show', ['airport' => $airport]);
         }
     }
 
     public function edit($id)
     {
-        $airports = Airport::find([$id]);
+        $airport = Airport::find([$id]);
 
-        if (is_null($airports)) {
+        if (is_null($airport)) {
             //TODO redirect to standard error page
         } else {
-            return View::make('airport.edit', ['airport' => $airports]);
+            return View::make('airport.edit', ['airport' => $airport]);
         }
     }
 

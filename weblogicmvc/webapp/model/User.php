@@ -17,4 +17,4 @@ $user = User::first();
 $ticket = $user->create_ticket(array('precopassagem', 'dtacomprapassagem' => 1));
     */
 
-}
+
