@@ -21,6 +21,7 @@ Layout::includeLayout('header'); ?>
     <!-- Intro -->
     <div class="container text-center">
         <br>
+
         <h2 class="thin">Pesquisa aqui:</h2>
         <form method="post" action="<?=Url::toRoute('flight/index')?>">
             <tr>
@@ -29,7 +30,7 @@ Layout::includeLayout('header'); ?>
             <input type="submit" name="">
 
                 <td></td><label>Identique o voo que pretende</label>
-                <td></td><input type="text" name="PesquisarVoo" placeholder="indique o voo">
+                <td></td><input type="datetime-local" name="PesquisarVoo" placeholder="indique o voo">
                 <input type="submit" name="">
             </tr>
 

@@ -10,7 +10,7 @@ class User extends Model
             )
     );
 */
-}
+
 /*
 $user = User::first();
 

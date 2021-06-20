@@ -29,28 +29,28 @@ $tickets = Data::get('ticket')?>
                             <div class="top-margin">
                                 <label>Preço <span class="text-danger">*</span></label>
                                 <input type="text" value="<?=$tickets->preco?>" name="preco" class="form-control" placeholder="Enter preço da passagem">
-                                <?= ErrMgr::bind('precoPassagem') ?>
+                                <?= ErrMgr::bind('precopassagem') ?>
 
                             </div>
                             <hr>
                             <div class="top-margin">
                                 <label>Data e hora da compra do bilhete <span class="text-danger">*</span></label>
-                                <input type="datetime-local" value="<?=$tickets->dtaHoraPassagemCompra?>" name="dataHora" class="form-control" placeholder="Enter pagamento">
+                                <input type="datetime-local" value="<?=$tickets->dtahorapassagemcompra?>" name="dataHora" class="form-control" placeholder="Enter pagamento">
                                 <?= ErrMgr::bind('dtahorapassagemcompra') ?>
                             </div>
                             <hr>
                             <div class="top-margin">
                                 <label>Ida <span class="text-danger">*</span></label>
-                                <input type="text" value="<?=$tickets->idVooIda?>" name="VooIda" class="form-control" placeholder="Enter se é um voo de ida">
-                                <?= ErrMgr::bind('idVooIda') ?>
+                                <input type="text" value="<?=$tickets->idvooida?>" name="VooIda" class="form-control" placeholder="Enter se é um voo de ida">
+                                <?= ErrMgr::bind('idvooida') ?>
                             </div>
 
                             <hr>
 
                             <div class="top-margin">
                                 <label>Volta <span class="text-danger">*</span></label>
-                                <input type="text" value="<?=$tickets->idVooVolta?>" name="VooVolta" class="form-control" placeholder="Enter se é um voo de ida e volta">
-                                <?= ErrMgr::bind('idVooVolta') ?>
+                                <input type="text" value="<?=$tickets->idvoovolta?>" name="VooVolta" class="form-control" placeholder="Enter se é um voo de ida e volta">
+                                <?= ErrMgr::bind('idvoovolta') ?>
                             </div>
                             <hr>
                             <div class="col-lg-4 text-right">

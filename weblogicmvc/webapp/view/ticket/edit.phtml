@@ -1,0 +1,93 @@
+<?php use ArmoredCore\WebObjects\Data;
+use ArmoredCore\WebObjects\ErrMgr;
+use ArmoredCore\WebObjects\Layout;
+use ArmoredCore\WebObjects\URL;
+
+Layout::includeLayout('header') ?>
+<?php $tickets = Data::get('ticket') ?>
+<?php ErrMgr::attach($tickets) ?>
+
+<!-- container -->
+<div class="container">
+
+    <div class="row">
+
+        <!-- Article main content -->
+        <article class="col-xs-12 maincontent">
+            <header class="page-header">
+                <h1 class="page-title">Editar Bilhete - CheckIn</h1>
+            </header>
+
+
+            <div class="panel panel-default">
+                <div class="panel-body">
+
+                    <hr>
+
+
+                    <form class="form-horizontal" method="post" action="<?=Url::toRoute('ticket/update', $tickets->id)?>">
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="name">preço:<span class="text-danger">*</span></label>
+                            <div class="col-sm-6">
+                                <input type="text" required value="<?=$tickets->preco?>" name="preco" class="form-control" placeholder="Enter preço da passagem">
+                                <?= ErrMgr::bind('precopassagem') ?>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="name">Data e hora da compra:<span class="text-danger">*</span></label>
+                            <div class="col-sm-6">
+                                <input type="datetime-local" value="<?=$tickets->dtahorapassagemcompra?>" name="dataHora" class="form-control" placeholder="Enter pagamento">
+                                <?= ErrMgr::bind('dtahorapassagemcompra') ?>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="name">Voo de ida:<span class="text-danger">*</span></label>
+                            <div class="col-sm-6">
+                                <input type="text" value="<?=$tickets->idcooida?>" name="VooIda" class="form-control" placeholder="Enter se é um voo de ida">
+                                <?= ErrMgr::bind('idvooida') ?>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="name">Voo de volta:<span class="text-danger">*</span></label>
+                            <div class="col-sm-6">
+                                <input type="text" value="<?=$tickets->idvoovolta?>" name="VooVolta" class="form-control" placeholder="Enter se é um voo de ida e volta">
+                                <?= ErrMgr::bind('idvoovolta') ?>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="name">Check-IN:<span class="text-danger">*</span></label>
+                            <div class="col-sm-6">
+                            <input  type="text" value="<?=$tickets->Ckeckin?>" name="CheckIn" class="form-control">
+                            <select class="column">
+
+                                <option value="S"> Sim</option>
+                                <option value="N">Não</option>
+                            </select>
+                                <?= ErrMgr::bind('checkin') ?>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <div class="col-lg-4 text-right">
+                            <button class="btn btn-default" type="submit">Save</button>
+                        </div>
+                </div>
+                </form>
+            </div>
+    </div>
+
+
+
+    </article>
+    <!-- /Article -->
+
+</div>
+</div>	<!-- /container -->
+
+<?php Layout::includeLayout('footer') ?>

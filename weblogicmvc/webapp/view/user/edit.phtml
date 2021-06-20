@@ -1,0 +1,98 @@
+<?php use ArmoredCore\WebObjects\Data;
+use ArmoredCore\WebObjects\ErrMgr;
+use ArmoredCore\WebObjects\Layout;
+use ArmoredCore\WebObjects\URL;
+
+Layout::includeLayout('header') ?>
+<?php $users = Data::get('user') ?>
+<?php ErrMgr::attach($users) ?>
+
+<!-- container -->
+<div class="container">
+
+    <div class="row">
+
+        <!-- Article main content -->
+        <article class="col-xs-12 maincontent">
+            <header class="page-header">
+                <h1 class="page-title">Editar Utilizadores</h1>
+            </header>
+
+
+            <div class="panel panel-default">
+                <div class="panel-body">
+
+                    <hr>
+
+
+                    <form class="form-horizontal" method="post" action="<?=Url::toRoute('user/update', $users->id)?>">
+
+                        <div class="form-group">
+                                <label class="control-label col-sm-2" for="name">Name:<span class="text-danger">*</span></label>
+                                <div class="col-sm-6">
+                                <input type="text" required value="<?=$users->nomecompleto?>" name="nomecompleto" class="form-control" placeholder="Enter name">
+                                <?= ErrMgr::bind('nomecompleto') ?>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="name">Data de Nascimento:<span class="text-danger">*</span></label>
+                            <div class="col-sm-6">
+                                <input type="datetime-local" required value="<?=$users->dtanascimento?>" name="dtanascimento" class="form-control" placeholder="Enter data de nascimento">
+                                <?= ErrMgr::bind('dtanascimento') ?>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="name">Email:<span class="text-danger">*</span></label>
+                            <div class="col-sm-6">
+                                <input type="text" required value="<?=$users->email?>" name="email" class="form-control" placeholder="Enter email">
+                                <?= ErrMgr::bind('email') ?>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="name">Telefone:<span class="text-danger">*</span></label>
+                            <div class="col-sm-6">
+                                <input type="text" required value="<?=$users->telefone?>" name="telefone" class="form-control" placeholder="Enter numero de telefone">
+                                <?= ErrMgr::bind('telefone') ?>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="name">Username:<span class="text-danger">*</span></label>
+                            <div class="col-sm-6">
+                                <input type="text" required value="<?=$users->username?>" name="username" class="form-control" placeholder="Enter um username">
+                                <?= ErrMgr::bind('username') ?>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="name">Password:<span class="text-danger">*</span></label>
+                            <div class="col-sm-6">
+                                <input type="password" required value="<?=$users->password?>" name="password" class="form-control" placeholder="Enter uma password">
+                                <?= ErrMgr::bind('password') ?>
+                            </div>
+                        </div>
+
+
+
+                        <hr>
+
+                        <div class="col-lg-4 text-right">
+                            <button class="btn btn-default" type="submit">Save</button>
+                        </div>
+                </div>
+                </form>
+            </div>
+    </div>
+
+
+
+    </article>
+    <!-- /Article -->
+
+</div>
+</div>	<!-- /container -->
+
+<?php Layout::includeLayout('footer') ?>
