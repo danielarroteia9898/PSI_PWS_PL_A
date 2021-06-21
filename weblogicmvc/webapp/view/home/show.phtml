@@ -1,0 +1,57 @@
+<?php
+use ArmoredCore\WebObjects\Asset;
+use ArmoredCore\WebObjects\Layout;
+use ArmoredCore\WebObjects\URL;
+use Carbon\Carbon;
+use ArmoredCore\WebObjects\Data;
+
+Layout::includeLayout('header'); ?>
+
+<?php
+
+//ler dados enviados controlador
+$pesquisa = Data::get('pesquisa');
+
+?>
+<h1>Pesquisa</h1>
+
+<h4>Aviao:  <?php
+    echo $pesquisa->aviao;
+    ?> </h4>
+
+<h4>Aeroporto <?php
+    echo $pesquisa->airport;
+    ?> </h4>
+
+<h4>preço <?php
+    echo $pesquisa->flight;
+    ?> </h4>
+
+
+<table  class="table table-bordered">
+    <tr>
+        <th>Aviao</th>
+        <th>Aeroporto</th>
+        <th>Preço</th>
+
+    </tr>
+
+    <?php
+    $rows = count($pesquisa);
+
+    if($pesquisa->airport > 0)
+    {
+        while ($row = $pesquisa->fetch())
+        {
+            echo '<tr><td>'.$row.'</td></tr>';
+        }
+    }
+    if($pesquisa->flights > 0) {
+        while ($row = $pesquisa->fetch()) {
+            echo '<tr><td>' . $row . '</td></tr>';
+        }
+    }
+    ?>
+</table>
+
+<?php Layout::includeLayout('footer') ?>

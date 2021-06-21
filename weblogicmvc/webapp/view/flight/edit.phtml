@@ -25,7 +25,7 @@ Layout::includeLayout('header') ?>
                     <hr>
 
 
-                    <form class="form-horizontal" method="post" action="<?=Url::toRoute('user/update', $flights->id)?>">
+                    <form class="form-horizontal" method="post" action="<?=Url::toRoute('flight/update', $flights->id)?>">
 
                         <div class="form-group">
                             <label class="control-label col-sm-2" for="name">Id do Aeroporto:<span class="text-danger">*</span></label>
@@ -36,7 +36,7 @@ Layout::includeLayout('header') ?>
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-sm-2" for="name">Data de Nascimento:<span class="text-danger">*</span></label>
+                            <label class="control-label col-sm-2" for="name">preco do voo:<span class="text-danger">*</span></label>
                             <div class="col-sm-6">
                                 <input type="text" required value="<?=$flights->precovoo?>" name="preco" class="form-control" placeholder="Enter o preço do voo">
                                 <?= ErrMgr::bind('precovoo') ?>

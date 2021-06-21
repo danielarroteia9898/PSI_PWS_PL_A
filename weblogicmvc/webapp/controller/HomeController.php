@@ -40,9 +40,9 @@ class HomeController extends BaseController
 
     public function setsession(){
         $dataObject = MetaArmCoreModel::getComponents();
-        Session::set('object', $dataObject);
+        Session::set('pesquisar', $dataObject);
 
-        Redirect::toRoute('home/worksheet');
+        Redirect::toRoute('home/show');
     }
 
     public function showsession(){
@@ -56,5 +56,12 @@ class HomeController extends BaseController
         Redirect::toRoute('home/worksheet');
     }
 
+    public function show(){
 
+        $tickets = Post::get('ticket');
+        $flight = Post::get('flight');
+        $plane = Post::get('plane');
+
+        return View::make('home.show', ['pesquisar' => $pesquisa]);
+    }
 }

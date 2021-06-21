@@ -30,8 +30,8 @@ Layout::includeLayout('header') ?>
                             <div class="form-group">
                                 <label class="control-label col-sm-2" for="name">Name:<span class="text-danger">*</span></label>
                                 <div class="col-sm-6">
-                                    <input type="text" value="<?=$plane->nome?>" class="form-control" required name="name" placeholder="Nome do Avião">
-                                    <?= ErrMgr::bind('nomeAvião') ?>
+                                    <input type="text" value="<?=$plane->nomeaviao?>" class="form-control" required name="nomeaviao" placeholder="Nome do Avião">
+                                    <?= ErrMgr::bind('nomeaviao') ?>
                                 </div>
                             </div>
 
@@ -39,14 +39,14 @@ Layout::includeLayout('header') ?>
                                 <label class="control-label col-sm-2" for="name">Referencia:<span class="text-danger">*</span></label>
                                 <div class="col-sm-6">
                                     <input type="text" required value="<?=$plane->referencia?>" class="form-control" name="referencia" placeholder="Referência do Avião">
-                                    <?= ErrMgr::bind('referenciaAvião') ?>
+                                    <?= ErrMgr::bind('referencia') ?>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-sm-2" for="name">Lotacao:<span class="text-danger">*</span></label>
                                 <div class="col-sm-6">
                                     <input type="number" required value="<?=$plane->lotacao?>" name="lotacao" class="form-control" placeholder="Lotação do Avião">
-                                    <?= ErrMgr::bind('lotacaoAviao') ?>
+                                    <?= ErrMgr::bind('lotacao') ?>
                                 </div>
                             </div>
 

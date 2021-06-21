@@ -12,7 +12,7 @@ class FlightController
 
     public function index()
     {
-        $flights = Ticket::all();
+        $flights = Flight::all();
         return View::make('flight.index', ['flight' => $flights]);
     }
 
